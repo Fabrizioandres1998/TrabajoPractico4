@@ -173,7 +173,7 @@ public class jifMateria extends javax.swing.JInternalFrame {
     jtfcodigo.setText("");
     jtfnombremateria.setText("");
     jtfaño.setText("");
-}  
+  
     }//GEN-LAST:event_jbNuevoActionPerformed
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed

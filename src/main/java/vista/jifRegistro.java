@@ -4,6 +4,11 @@
  */
 package vista;
 
+import logica.Alumno;
+import logica.Materia;
+
+
+
 /**
  *
  * @author Fabrizio
@@ -15,7 +20,23 @@ public class jifRegistro extends javax.swing.JInternalFrame {
      */
     public jifRegistro() {
         initComponents();
+        cargarAlumnos();
+        cargarMaterias;
     }
+    
+    private void cargarAlumnos(){
+        comboAlumnos.removeAllItems();
+        for (Alumno a : jifAlumno.listaAlumnos){
+            comboAlumnos.addItem(a);
+        }
+    }
+    
+    private void cargarMaterias(){
+        comboMaterias.removeAllItems();
+        for (Materia m : jifMateria.listaMaterias){
+            comboMaterias.addItem(m);
+        }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,27 +47,68 @@ public class jifRegistro extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        comboAlumnos = new javax.swing.JComboBox<>();
+        comboMaterias = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Registro");
 
+        comboAlumnos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar Alumno" }));
+        comboAlumnos.setToolTipText("");
+        comboAlumnos.setName(""); // NOI18N
+        comboAlumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboAlumnosActionPerformed(evt);
+            }
+        });
+
+        comboMaterias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar Materia" }));
+
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comboAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comboMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(comboAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(comboMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(56, 56, 56))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void comboAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboAlumnosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboAlumnosActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> comboAlumnos;
+    private javax.swing.JComboBox<String> comboMaterias;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
