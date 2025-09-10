@@ -5,6 +5,7 @@
  */
 package vista;
 import logica.Alumno;
+import logica.Materia;
 
 /**
  *
@@ -36,6 +37,8 @@ public class jifRegistro extends javax.swing.JInternalFrame {
         jcbAlumnos = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jcbMaterias = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -59,10 +62,16 @@ public class jifRegistro extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Registro");
 
+        jcbAlumnos.setForeground(new java.awt.Color(0, 204, 255));
+
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel1.setText("Registro");
 
         jLabel2.setText("Selecciona el Alumno");
+
+        jcbMaterias.setForeground(new java.awt.Color(51, 255, 255));
+
+        jLabel3.setText("Selecciona la Materia");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,12 +80,18 @@ public class jifRegistro extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(113, 113, 113)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addComponent(jcbAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jcbMaterias, 0, 171, Short.MAX_VALUE)
+                    .addComponent(jcbAlumnos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(67, 67, 67))
         );
         layout.setVerticalGroup(
@@ -88,7 +103,11 @@ public class jifRegistro extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcbAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jcbMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleName("Registro");
@@ -101,15 +120,21 @@ public class jifRegistro extends javax.swing.JInternalFrame {
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JComboBox<Alumno> jcbAlumnos;
+    private javax.swing.JComboBox<Materia> jcbMaterias;
     // End of variables declaration//GEN-END:variables
     private void cargarCombos(){
         for (Alumno a : MenuPrincipal.listaAlumnos){
             jcbAlumnos.addItem(a);
+        }
+        
+        for (Materia m : MenuPrincipal.listaMaterias){
+            jcbMaterias.addItem(m);
         }
     }
 

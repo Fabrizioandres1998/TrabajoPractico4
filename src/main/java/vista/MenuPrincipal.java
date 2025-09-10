@@ -128,7 +128,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmRegistroActionPerformed
 
     private void jmiAgregarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarMateriaActionPerformed
-       
+        jifMateria Mat = new jifMateria();
+        jdpEscritorio.add(Mat);
+        Mat.setVisible(true);
     }//GEN-LAST:event_jmiAgregarMateriaActionPerformed
 
     private void jmiRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRegistroActionPerformed

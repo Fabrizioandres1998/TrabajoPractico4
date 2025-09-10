@@ -191,7 +191,7 @@ public class jifMateria extends javax.swing.JInternalFrame {
 
         Materia nueva = new Materia(codigo, nombre, año);
 
-        if (listaMaterias.add(nueva)) {
+        if (MenuPrincipal.listaMaterias.add(nueva)) {
             javax.swing.JOptionPane.showMessageDialog(this, "Materia guardada correctamente.");
         } else {
             javax.swing.JOptionPane.showMessageDialog(this, "Ya existe una materia con ese código.");
