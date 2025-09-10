@@ -28,10 +28,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAlumno = new javax.swing.JMenu();
         jmiAgregarAlumno = new javax.swing.JMenuItem();
-        jmMateria = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jmMateriaarri = new javax.swing.JMenu();
+        jmiAgregarMateria = new javax.swing.JMenuItem();
         jmRegistro = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jmiRegistro = new javax.swing.JMenuItem();
         jmSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,17 +64,32 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jmAlumno);
 
-        jmMateria.setText("Materia");
+        jmMateriaarri.setText("Materia");
 
-        jMenuItem2.setText("Agregar materia");
-        jmMateria.add(jMenuItem2);
+        jmiAgregarMateria.setText("Agregar materia");
+        jmiAgregarMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiAgregarMateriaActionPerformed(evt);
+            }
+        });
+        jmMateriaarri.add(jmiAgregarMateria);
 
-        jMenuBar1.add(jmMateria);
+        jMenuBar1.add(jmMateriaarri);
 
         jmRegistro.setText("Registro");
+        jmRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmRegistroActionPerformed(evt);
+            }
+        });
 
-        jMenuItem3.setText("Registrar ");
-        jmRegistro.add(jMenuItem3);
+        jmiRegistro.setText("Registrar ");
+        jmiRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiRegistroActionPerformed(evt);
+            }
+        });
+        jmRegistro.add(jmiRegistro);
 
         jMenuBar1.add(jmRegistro);
 
@@ -108,19 +123,35 @@ public class MenuPrincipal extends javax.swing.JFrame {
         alumnoFrame.setVisible(true);            // mostrarlo
     }//GEN-LAST:event_jmiAgregarAlumnoActionPerformed
 
+    private void jmRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmRegistroActionPerformed
+
+    }//GEN-LAST:event_jmRegistroActionPerformed
+
+    private void jmiAgregarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarMateriaActionPerformed
+       
+    }//GEN-LAST:event_jmiAgregarMateriaActionPerformed
+
+    private void jmiRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRegistroActionPerformed
+        // TODO add your handling code here:
+        jifRegistro reg = new jifRegistro();
+        jdpEscritorio.add(reg);
+        
+        reg.setVisible(true);
+    }//GEN-LAST:event_jmiRegistroActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JDesktopPane jdpEscritorio;
     private javax.swing.JMenu jmAlumno;
-    private javax.swing.JMenu jmMateria;
+    private javax.swing.JMenu jmMateriaarri;
     private javax.swing.JMenu jmRegistro;
     private javax.swing.JMenu jmSalir;
     private javax.swing.JMenuItem jmiAgregarAlumno;
+    private javax.swing.JMenuItem jmiAgregarMateria;
+    private javax.swing.JMenuItem jmiRegistro;
     // End of variables declaration//GEN-END:variables
 }

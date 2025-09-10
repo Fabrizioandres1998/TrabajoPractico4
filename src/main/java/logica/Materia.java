@@ -12,12 +12,12 @@ public class Materia {
 
     private int idMateria;
     private String nombre;
-    private int año;
+    private int anio;
 
-    public Materia(int idMateria, String nombre, int año) {
+    public Materia(int idMateria, String nombre, int anio) {
         this.idMateria = idMateria;
         this.nombre = nombre;
-        this.año = año;
+        this.anio = anio;
     }
 
     public int getIdMateria() {
@@ -37,11 +37,11 @@ public class Materia {
     }
 
     public int getAño() {
-        return año;
+        return anio;
     }
 
-    public void setAño(int año) {
-        this.año = año;
+    public void setAño(int anio) {
+        this.anio = anio;
     }
 
     @Override

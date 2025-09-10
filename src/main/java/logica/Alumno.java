@@ -56,14 +56,18 @@ public class Alumno {
         this.materias = materias;
     }
 
-    public void agregarMateria(Materia materia) {
-        materias.add(materia);
+    public boolean agregarMateria(Materia materia) {
+        return materias.add(materia);
     }
     
     public int cantidadMaterias() {
         return materias.size();
     }
     
+    @Override
+    public String toString(){
+        return nombre + " " + apellido;
+    }
     
     
 }

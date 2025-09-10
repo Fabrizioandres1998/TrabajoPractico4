@@ -6,6 +6,7 @@ package vista;
 
 import java.util.HashSet;
 import logica.Alumno;
+import logica.Materia;
 
 /**
  *
@@ -96,7 +97,7 @@ public class jifAlumno extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jtfNombre))
-                            .addComponent(jLabel2)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
@@ -110,11 +111,11 @@ public class jifAlumno extends javax.swing.JInternalFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
                             .addComponent(jtfLegajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -154,8 +155,8 @@ public class jifAlumno extends javax.swing.JInternalFrame {
             String apellido = jtfApellido.getText();
             String nombre = jtfNombre.getText();
 
-            Alumno nuevo = new Alumno(legajo, apellido, nombre, new HashSet<>());
-            listaAlumnos.add(nuevo);
+            Alumno nuevo = new Alumno(legajo, apellido, nombre, new HashSet<Materia>());
+            MenuPrincipal.listaAlumnos.add(nuevo);
 
             javax.swing.JOptionPane.showMessageDialog(this, "Alumno guardado correctamente.");
 
