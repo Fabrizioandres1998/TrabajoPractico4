@@ -18,6 +18,7 @@ public class jifRegistro extends javax.swing.JInternalFrame {
      */
     public jifRegistro() {
         initComponents();
+        cargarCombos();
     }
 
     /**
@@ -39,6 +40,8 @@ public class jifRegistro extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jcbMaterias = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
+        botonInscribir = new javax.swing.JButton();
+        botonSalir = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -62,37 +65,61 @@ public class jifRegistro extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Registro");
 
-        jcbAlumnos.setForeground(new java.awt.Color(0, 204, 255));
+        jcbAlumnos.setBackground(new java.awt.Color(255, 255, 255));
+        jcbAlumnos.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel1.setText("Registro");
 
         jLabel2.setText("Selecciona el Alumno");
 
-        jcbMaterias.setForeground(new java.awt.Color(51, 255, 255));
+        jcbMaterias.setBackground(new java.awt.Color(255, 255, 255));
+        jcbMaterias.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel3.setText("Selecciona la Materia");
+
+        botonInscribir.setText("Inscribir");
+        botonInscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonInscribirActionPerformed(evt);
+            }
+        });
+
+        botonSalir.setText("Salir");
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(152, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 13, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jcbMaterias, 0, 171, Short.MAX_VALUE)
                     .addComponent(jcbAlumnos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(67, 67, 67))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
+                        .addComponent(botonInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addComponent(botonSalir)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,16 +134,34 @@ public class jifRegistro extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcbMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(botonInscribir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonSalir)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
-
-        getAccessibleContext().setAccessibleName("Registro");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInscribirActionPerformed
+        // TODO add your handling code here:
+        if (jcbAlumnos.getSelectedItem() != null && jcbMaterias.getSelectedItem() != null){
+            javax.swing.JOptionPane.showMessageDialog(this, "Alumno inscripto correctamente.");
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(this, "Agrega un Alumno y Materia.");
+        }
+    }//GEN-LAST:event_botonInscribirActionPerformed
+
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_botonSalirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonInscribir;
+    private javax.swing.JButton botonSalir;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -66,5 +66,9 @@ public class Materia {
         return this.idMateria == other.idMateria;
     }
     
+    @Override
+    public String toString(){
+        return nombre;
+    }
     
 }

@@ -25,6 +25,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jdpEscritorio = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAlumno = new javax.swing.JMenu();
         jmiAgregarAlumno = new javax.swing.JMenuItem();
@@ -32,19 +35,50 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jmiAgregarMateria = new javax.swing.JMenuItem();
         jmRegistro = new javax.swing.JMenu();
         jmiRegistro = new javax.swing.JMenuItem();
-        jmSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel1.setText("Menu Principal");
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel2.setText("Formulario de Inscripcion");
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel3.setText("Agrega un Alumno y una Materia para inscribirlo");
+
+        jdpEscritorio.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jdpEscritorio.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jdpEscritorio.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jdpEscritorioLayout = new javax.swing.GroupLayout(jdpEscritorio);
         jdpEscritorio.setLayout(jdpEscritorioLayout);
         jdpEscritorioLayout.setHorizontalGroup(
             jdpEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 516, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdpEscritorioLayout.createSequentialGroup()
+                .addGap(0, 75, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(68, 68, 68))
+            .addGroup(jdpEscritorioLayout.createSequentialGroup()
+                .addGroup(jdpEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jdpEscritorioLayout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(jLabel2))
+                    .addGroup(jdpEscritorioLayout.createSequentialGroup()
+                        .addGap(295, 295, 295)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jdpEscritorioLayout.setVerticalGroup(
             jdpEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
+            .addGroup(jdpEscritorioLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addContainerGap(278, Short.MAX_VALUE))
         );
 
         jmAlumno.setText("Alumno");
@@ -92,9 +126,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jmRegistro.add(jmiRegistro);
 
         jMenuBar1.add(jmRegistro);
-
-        jmSalir.setText("Salir");
-        jMenuBar1.add(jmSalir);
 
         setJMenuBar(jMenuBar1);
 
@@ -146,12 +177,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JDesktopPane jdpEscritorio;
     private javax.swing.JMenu jmAlumno;
     private javax.swing.JMenu jmMateriaarri;
     private javax.swing.JMenu jmRegistro;
-    private javax.swing.JMenu jmSalir;
     private javax.swing.JMenuItem jmiAgregarAlumno;
     private javax.swing.JMenuItem jmiAgregarMateria;
     private javax.swing.JMenuItem jmiRegistro;
